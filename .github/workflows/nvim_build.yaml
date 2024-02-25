@@ -12,6 +12,10 @@ jobs:
       image: ghcr.io/moderncv/debian-texlive-docker:main
 
     steps:
+    - name: Install git 
+      uses: sudo apt-get install git
+
+    steps:
     - name: Checkout code
       uses: actions/checkout@v2
 
