@@ -8,16 +8,16 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    # container:
-    #   image: ghcr.io/moderncv/debian-texlive-docker:main
+    container:
+      image: ghcr.io/moderncv/debian-texlive-docker:main
 
     steps:
 
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Install
-      run: sudo apt-get install texlive texlive-latex-extra texlive-fonts-recommended git
+    # - name: Install
+    #   run: sudo apt-get install texlive texlive-latex-extra texlive-fonts-recommended git
       # run: sudo apt-get install git
 
     # - name: Configure Git
