@@ -8,33 +8,34 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/moderncv/debian-texlive-docker:main
+    # container:
+    #   image: ghcr.io/moderncv/debian-texlive-docker:main
 
     steps:
-
-    - name: Install git 
-      run: sudo apt-get install git
-
-    - name: Configure Git
-      run: |
-        git config --global user.email "robin_rob96@me.com"
-        git config --global user.name "Robin Heitz"
 
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Build pdf
-      run: latexmk ./nvim.tex
+    - name: Install
+      run: sudo apt-get install texlive texlive-latex-extra texlive-fonts-recommended git
+      # run: sudo apt-get install git
 
-    - name: Upload PDF
-      uses: actions/upload-artifact@v3
-      with:
-        name: nvim.pdf
-        path: ./nvim.pdf
-
-    - name: Deply
-      run: |
-          git add nvim.pdf
-          git commit -m 'Auto-commit nvim.pdf'
-          git push
+    # - name: Configure Git
+    #   run: |
+    #     git config --global user.email "robin_rob96@me.com"
+    #     git config --global user.name "Robin Heitz"
+    #
+    # - name: Build pdf
+    #   run: latexmk ./nvim.tex
+    #
+    # - name: Upload PDF
+    #   uses: actions/upload-artifact@v3
+    #   with:
+    #     name: nvim.pdf
+    #     path: ./nvim.pdf
+    #
+    # - name: Deply
+    #   run: |
+    #       git add nvim.pdf
+    #       git commit -m 'Auto-commit nvim.pdf'
+    #       git push
