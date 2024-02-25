@@ -8,8 +8,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/moderncv/debian-texlive-docker:main
+    # container:
+    #   image: ghcr.io/moderncv/debian-texlive-docker:main
 
     steps:
 
@@ -19,6 +19,9 @@ jobs:
     - name: Install git
       run: apt-get update && apt-get install git
 
+    - name: Install LaTeX
+      run: sudo apt-get install texlive texlive-latex-extra texlive-fonts-recommended
+      
     # - name: Configure Git
     #   run: |
     #     git config --global user.email "robin_rob96@me.com"
