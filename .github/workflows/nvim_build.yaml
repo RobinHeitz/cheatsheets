@@ -17,7 +17,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Install git
-      run: apt-get install git
+      run: apt-get update && apt-get install git
 
     # - name: Configure Git
     #   run: |
