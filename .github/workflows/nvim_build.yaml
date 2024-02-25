@@ -25,17 +25,17 @@ jobs:
     #     git config --global user.email "robin_rob96@me.com"
     #     git config --global user.name "Robin Heitz"
     #
-    # - name: Build pdf
-    #   run: latexmk ./nvim.tex
-    #
-    # - name: Upload PDF
-    #   uses: actions/upload-artifact@v3
-    #   with:
-    #     name: nvim.pdf
-    #     path: ./nvim.pdf
-    #
-    # - name: Deply
-    #   run: |
-    #       git add nvim.pdf
-    #       git commit -m 'Auto-commit nvim.pdf'
-    #       git push
+    - name: Build pdf
+      run: latexmk ./nvim.tex
+
+    - name: Upload PDF
+      uses: actions/upload-artifact@v3
+      with:
+        name: nvim.pdf
+        path: ./nvim.pdf
+
+    - name: Deply
+      run: |
+          git add nvim.pdf
+          git commit -m 'Auto-commit nvim.pdf'
+          git push
