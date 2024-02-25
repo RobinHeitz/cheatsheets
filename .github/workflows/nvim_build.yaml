@@ -12,8 +12,14 @@ jobs:
       image: ghcr.io/moderncv/debian-texlive-docker:main
 
     steps:
+
     - name: Install git 
       run: sudo apt-get install git
+
+    - name: Configure Git
+      run: |
+        git config --global user.email "robin_rob96@me.com"
+        git config --global user.name "Robin Heitz"
 
     - name: Checkout code
       uses: actions/checkout@v2
