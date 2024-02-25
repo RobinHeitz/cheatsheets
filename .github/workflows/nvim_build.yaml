@@ -16,9 +16,8 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    # - name: Install
-    #   run: sudo apt-get install texlive texlive-latex-extra texlive-fonts-recommended git
-      # run: sudo apt-get install git
+    - name: Install git
+      run: sudo apt-get install git
 
     # - name: Configure Git
     #   run: |
